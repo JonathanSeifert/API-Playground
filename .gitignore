@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### local ###
+/src/main/resources/db/data
+./reset.sh
