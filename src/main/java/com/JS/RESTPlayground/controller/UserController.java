@@ -59,17 +59,12 @@ public class UserController {
 
     /*
      * 201 -> User created
-     * 400 -> id already taken
      * 500 -> internal Server error.
      */
     @PostMapping
     public ResponseEntity<?> saveUser(@Validated @RequestBody User user) {
         try {
-            if (userRepository.findById(user.getId()).isPresent()) {
-                return new ResponseEntity<>("A user with id " + user.getId() + " already exists.", HttpStatus.BAD_REQUEST);
-            } else {
-                return new ResponseEntity<>(userRepository.save(user), HttpStatus.CREATED);
-            }
+            return new ResponseEntity<>(userRepository.save(user), HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>("Something went wrong.", HttpStatus.INTERNAL_SERVER_ERROR);
         }
@@ -83,6 +78,9 @@ public class UserController {
     @PutMapping("/{id}")
     public ResponseEntity<?> updateUserById(@PathVariable("id") long id, @RequestBody User user) {
         try {
+            if (user == null) {
+                return new ResponseEntity<>("User data cannot be null!", HttpStatus.BAD_REQUEST);
+            }
             if (userRepository.findById(id).isEmpty()) {
                 return new ResponseEntity<>("User with id " + id + " does not exist.", HttpStatus.BAD_REQUEST);
             } else {
