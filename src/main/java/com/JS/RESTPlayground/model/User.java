@@ -11,6 +11,7 @@ import javax.persistence.*;
 @Setter
 @ToString
 @EqualsAndHashCode
+
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,4 +19,8 @@ public class User {
     private long id;
     @Column(name = "user_name")
     private String name;
+
+    public User(String name) {
+        this.name = name;
+    }
 }
