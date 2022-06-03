@@ -78,7 +78,7 @@ public class UserController {
     @PutMapping("/{id}")
     public ResponseEntity<?> updateUserById(@PathVariable("id") long id, @RequestBody User user) {
         try {
-            if (user == null) {
+            if (user.getName() == null) {
                 return new ResponseEntity<>("User data cannot be null!", HttpStatus.BAD_REQUEST);
             }
             if (userRepository.findById(id).isEmpty()) {
