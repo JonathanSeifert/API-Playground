@@ -4,4 +4,4 @@
  ## Technologies 
  - Spring Boot
  - JPA
- - PostgreSQL
+ - PostgreSQL (run in a docker container)
