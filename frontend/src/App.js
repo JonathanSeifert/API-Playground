@@ -1,12 +1,14 @@
+import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import axios from 'axios';
+import EntryList from './EntryList';
+import CreateEntry from './CreateEntry';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <h3>REST-Playground</h3>
-    </div>
-  );
+    <><div><EntryList /></div>
+    <div><CreateEntry /></div></>
+  )
 }
-
 export default App;
