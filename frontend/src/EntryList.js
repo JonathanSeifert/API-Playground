@@ -19,10 +19,14 @@ export default function EntryList() {
   }
 
   const handleDelete = async(id) => {
-    const request = 'http://localhost:8080/api/user/' + id
-    await fetch(request, {method: 'DELETE'})
+    if (id === undefined) {
+      const request = 'http://localhost:8080/api/user'
+      await fetch(request, {method: 'DELETE'})
+    } else {
+      const request = 'http://localhost:8080/api/user/' + id
+      await fetch(request, {method: 'DELETE'})
+    }
   }
-  
   useEffect(() => {
     fetchData();
   }, []);
@@ -35,6 +39,7 @@ export default function EntryList() {
           <tr>
             	<th width="5%">id</th>
             	<th width="20%">name</th>
+              <th><Button onClick={() => handleDelete()}>Delete all Users</Button></th>
           </tr>
         </thead>
         <tbody>
