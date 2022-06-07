@@ -4,21 +4,26 @@ import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import axios from 'axios';
-import { Tab } from 'bootstrap';
+
 
 export default function EntryList() {
   const [data, setData] = useState([]);
+
+  const fetchData = async() => {
+    await fetch('http://localhost:8080/api/user')
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res)
+        setData(res)
+      })
+  }
+
+  const handleDelete = async(id) => {
+    const request = 'http://localhost:8080/api/user/' + id
+    await fetch(request, {method: 'DELETE'})
+  }
+  
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const{data: response} = 
-          await axios.get('http://localhost:8080/api/user');
-          console.log(response);
-          setData(response);
-      } catch (error) {
-        console.error(error.message);
-      }
-    }
     fetchData();
   }, []);
 
@@ -37,6 +42,7 @@ export default function EntryList() {
           <tr key={item.id}>
             <td>{item.id}</td>
             <td>{item.name}</td>
+            <td><Button onClick={() => handleDelete(item.id)}>Delete</Button></td>
           </tr>
           ))}
         </tbody>
