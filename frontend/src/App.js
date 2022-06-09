@@ -1,14 +1,15 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import EntryList from './EntryList';
+import EntryList from './components/entryList/EntryList';
 
 const App = () => {
   return (
     <>
-      <h1 className='title'>REST-Playground</h1>
+      <h1 className='title'>API - Playground</h1>
+      <EntryList />
       <div id="description-el">
-        This is a simple Application to practice the use of REST-APIs. CRUD-Operations (Create, Read, Update and Delete) are supported.<br/>
+        This is a simple application to practice the use of APIs, Spring Boot and React.js. CRUD-Operations (Create, Read, Update and Delete) are supported.<br/>
         <i>Frontend:</i> 
         <ul>
           <li>React.js</li>
@@ -20,7 +21,7 @@ const App = () => {
           <li>PostgreSQL</li>
         </ul>
       </div>
-      <EntryList />
+      
     </>
   )
 }
