@@ -1,4 +1,4 @@
-﻿# REST - Playground
+﻿# API - Playground
  This is a small project to practice REST-APIs.
  
  ## Technologies 
