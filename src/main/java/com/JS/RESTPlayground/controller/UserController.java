@@ -30,7 +30,7 @@ public class UserController {
     public ResponseEntity<?> findAllUsers() {
         try {
             if (userRepository.findAll().isEmpty()) {
-                return new ResponseEntity<>("No users found.", HttpStatus.OK);
+                return new ResponseEntity<>("No users found.", HttpStatus.NO_CONTENT);
             } else {
                 return new ResponseEntity<>(userRepository.findAll(), HttpStatus.OK);
             }

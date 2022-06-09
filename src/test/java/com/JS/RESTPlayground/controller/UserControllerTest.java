@@ -60,7 +60,7 @@ public class UserControllerTest {
         MvcResult mvc = mockMvc.perform(MockMvcRequestBuilders
                 .get("/api/user")
                 .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk())
+                .andExpect(status().isNoContent())
                 .andReturn();
         String response = mvc.getResponse().getContentAsString();
         String expected = "No users found.";
