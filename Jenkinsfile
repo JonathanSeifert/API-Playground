@@ -20,7 +20,7 @@ pipeline {
     }
     post {
         always {
-            emailext body: 'Insert text here.', subject: 'Pipeline Status', to: 'jonathanseifert1998@gmail.com'
+            mail bcc: '', body: 'Summary', cc: '', from: '', replyTo: '', subject: 'Pipeline Status', to: 'jonathanseifert1998@gmail.com'
         }
     }
 }
