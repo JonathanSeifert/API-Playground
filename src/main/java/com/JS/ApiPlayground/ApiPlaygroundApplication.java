@@ -1,13 +1,13 @@
-package com.JS.RESTPlayground;
+package com.JS.ApiPlayground;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RestPlaygroundApplication {
+public class ApiPlaygroundApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RestPlaygroundApplication.class, args);
+		SpringApplication.run(ApiPlaygroundApplication.class, args);
 	}
 
 }
