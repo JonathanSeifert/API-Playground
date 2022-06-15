@@ -18,4 +18,9 @@ pipeline {
             }
         }
     }
+    post {
+        always {
+            emailext body: 'Insert text here.', subject: 'Pipeline Status', to: 'jonathanseifert1998@gmail.com'
+        }
+    }
 }
