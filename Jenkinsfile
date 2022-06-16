@@ -28,5 +28,6 @@ pipeline {
     post {
         failure {
             sh 'mvn -B -DskipTests clean package -X' 
+        }
     }
 }
