@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.JS</groupId>
-	<artifactId>REST-Playground</artifactId>
+	<artifactId>API-Playground</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>REST-Playground</name>
-	<description>Learn RESTful API</description>
+	<name>API-Playground</name>
+	<description>This is a small project to practice the use of APIs, Spring Boot and React.js.</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>

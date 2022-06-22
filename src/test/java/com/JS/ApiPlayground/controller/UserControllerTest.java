@@ -1,7 +1,7 @@
-package com.JS.RESTPlayground.controller;
+package com.JS.ApiPlayground.controller;
 
-import com.JS.RESTPlayground.model.User;
-import com.JS.RESTPlayground.repository.UserRepository;
+import com.JS.ApiPlayground.model.User;
+import com.JS.ApiPlayground.repository.UserRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
